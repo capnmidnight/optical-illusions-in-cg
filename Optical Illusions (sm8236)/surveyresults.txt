@@ -1,0 +1,67 @@
+Test #0  ======
+Percentages:
+|   success = 5.0
+|   failure = 95.0
+Totals:
+|   success = 7
+|   failure = 133
+----total   = 140
+
+
+Test #1  ======
+Percentages:
+|   success = 78.18181818181819
+|   failure = 21.818181818181817
+Totals:
+|   success = 172
+|   failure = 48
+----total   = 220
+
+
+Test #2  ======
+Percentages:
+|   success = 97.89473684210527
+|   failure = 2.1052631578947367
+Totals:
+|   success = 186
+|   failure = 4
+----total   = 190
+
+For renderer type #0
+  For map size: 3 x 4  For 1000 renderings  Time: 266 milliseconds
+  For map size: 6 x 8  For 1000 renderings  Time: 297 milliseconds
+  For map size: 9 x 12  For 1000 renderings  Time: 453 milliseconds
+  For map size: 12 x 16  For 1000 renderings  Time: 735 milliseconds
+  For map size: 15 x 20  For 1000 renderings  Time: 1094 milliseconds
+  For map size: 18 x 24  For 1000 renderings  Time: 1609 milliseconds
+  For map size: 21 x 28  For 1000 renderings  Time: 2172 milliseconds
+  For map size: 24 x 32  For 1000 renderings  Time: 2890 milliseconds
+  For map size: 27 x 36  For 1000 renderings  Time: 3547 milliseconds
+  For map size: 30 x 40  For 1000 renderings  Time: 4078 milliseconds
+Total Time: 17141 milliseconds
+
+For renderer type #1
+  For map size: 3 x 4  For 1000 renderings  Time: 187 milliseconds
+  For map size: 6 x 8  For 1000 renderings  Time: 297 milliseconds
+  For map size: 9 x 12  For 1000 renderings  Time: 468 milliseconds
+  For map size: 12 x 16  For 1000 renderings  Time: 734 milliseconds
+  For map size: 15 x 20  For 1000 renderings  Time: 1140 milliseconds
+  For map size: 18 x 24  For 1000 renderings  Time: 1593 milliseconds
+  For map size: 21 x 28  For 1000 renderings  Time: 2204 milliseconds
+  For map size: 24 x 32  For 1000 renderings  Time: 2906 milliseconds
+  For map size: 27 x 36  For 1000 renderings  Time: 3532 milliseconds
+  For map size: 30 x 40  For 1000 renderings  Time: 4250 milliseconds
+Total Time: 17311 milliseconds
+
+For renderer type #2
+  For map size: 3 x 4  For 1000 renderings  Time: 672 milliseconds
+  For map size: 6 x 8  For 1000 renderings  Time: 1734 milliseconds
+  For map size: 9 x 12  For 1000 renderings  Time: 2437 milliseconds
+  For map size: 12 x 16  For 1000 renderings  Time: 4359 milliseconds
+  For map size: 15 x 20  For 1000 renderings  Time: 6078 milliseconds
+  For map size: 18 x 24  For 1000 renderings  Time: 9343 milliseconds
+  For map size: 21 x 28  For 1000 renderings  Time: 13125 milliseconds
+  For map size: 24 x 32  For 1000 renderings  Time: 16390 milliseconds
+  For map size: 27 x 36  For 1000 renderings  Time: 21250 milliseconds
+  For map size: 30 x 40  For 1000 renderings  Time: 22266 milliseconds
+Total Time: 97654 milliseconds

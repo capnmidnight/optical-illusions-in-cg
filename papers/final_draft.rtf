@@ -1,0 +1,98 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\nowidctlpar\fi720\f0\fs24 Optical Illusions in Computer Graphics\par
+McBeth, S.T., and Briggs, T.H.\par
+Department of Computer Science\par
+Shippensburg University\par
+Shippensburg, PA 17257\par
+\par
+\b Abstract\b0\par
+In general terms, all techniques of computer graphics are fundamentally optical illusions. Optical illusions that result from errors in perception are currently unused in the field of computer graphics, remaining merely as novelties in expressionistic art and children\rquote s books. Through the use of illusions that result in the viewer failing to properly perceive parallel lines, it is possible to convey extra information beyond the basic geometry of the scene. Specifically, we demonstrate how such illusions may be utilized to convey Z-axis information on two dimensional displays. This is compared to techniques with similar code complexity and techniques with similar information complexity. Minimum required processing power is extremely low, indicating immediate applications in hand-held and embedded devices.\par
+\pard\fi720\qc\cf1\par
+\pard\fi720\b 1 Background: \b0\par
+At the most fundamental level, all computer graphics (CG) are an illusion. From the underlying motivation of the CG field, to the computational techniques used to present images to viewers, subtle use of illusion and trickery are the primary tools of a graphicist. I hope to show that less subtle use of optical illusion, specifically static illusions that result from errors in perception, can result in complex graphical effects at very cheap cost, in terms of overall processing power, minimum rendering hardware requirements, and in the context of handheld and embedded devices, power consumption. \par
+The underlying motivation of computer generated imagery is to fool the viewer into believing they are seeing a scene that does not exist in reality. Point-like units of color comprise the component elements of a greater picture. These picture elements (pixels) converge to give the impression of an image that does not truly exist in the physical world. Because of this disconnect between reality and imagery, the CG developer has little motivation to use strictly accurate modeling. This becomes apparent when evaluating the various algorithms used for lighting and shading. \par
+Through the application of lighting and shading algorithms, rendered geometry will appear much more detailed than its modeled representation. With the use of Gouraud Shading [Gouraud 1971], cubes may be rendered to appear round. With the use of Phong Lighting and Shading [Phong 1975], a two dimensional disk can be mistaken for a \par
+perfectly round sphere. Bump Mapping [Blinn 1978] (and the more detailed Normal Mapping), define complex surface geometry that is never rendered, only being used to calculate shadows for painting on relatively simple structures. \par
+With an appropriate application of optical illusions, it may be possible to create effects that are either impossible given the medium or where the price of accurate modeling is not justifiable. For example, the current convention for displaying motion in a static image is the use of arrow icons pointing in the direction of motion. This does not actually give a sense of motion and also creates clutter. Conceivably, an illusion could be used to give the actually perception of motion [Freeman, Adelson, Heeger 1991]. \par
+\b 1.1 Types of illusions: \b0\par
+There are many different types of illusions, some more subtle than others. \par
+\b 1.1.1 Illusions in Perceived Geometry: \b0\par
+Through the use of lighting and shading algorithms [Gouraud 1971][Phong 1975][Blinn 1978], objects may appear to have a different shape than what is actually rendered. \par
+\b 1.1.2 Illusions in Perceived Motion: \b0\par
+Certain types of illusions will create the perception of motion [Freeman, Adelson, Heeger 1991][Kitaoka, Ashida 2003][Fermeuller, Pless, Aloimonos 1996]. My subsequent research will focus mainly on this area of illusion. With derivations of such illusions like the Primrose Field or the Bulge [Kitaoka 2002], it may be possible to give the illusion of waving water where no motion actually exists, or hills on checkerboard grids. \par
+\b 1.1.3 Illusions in Perceived Orientation: \b0\par
+Certain types of illusions will fool the viewer into misinterpreting the true location of objects [Yu, Choe 2004]. \par
+\b 1.1.4 Illusions in Perceived Size: \b0\par
+Certain types of illusions will fool the view into misinterpreting the true size of an object[Christie 1975]. This has been used to great effect in film with movies such as "Attack of the 50 Foot Woman" and "Honey I Shrunk the Kids". More recently, it has been used in video games like "Thief: the Dark Project" [Eidos 1995], in which the player is given a choice of halls to traverse. One hall is real and ends in a door of normal height, while the other uses forced perspective to trick the player into seeing a hall that ends in a 1 foot tall door as a normal hall, reminiscent of "Alice in Wonderland". \par
+\b 1.1.5 Illusions in Perceived Color \b0\par
+The computer display itself is representative of an illusion in color perception. Each pixel is a combination of three phosphorescent elements that, when struck by electrons, individually emit light of red, green, or blue wavelengths. When the viewer maintains adequate distance from the display, the colors converge and create a nearly continuous spectrum of color. \par
+\b 1.1.6 Illusions in Perceived Passage of Time \b0\par
+Animation is also a fundamental illusion. Each frame of a computer generated animation represents a discrete, point-like moment in time. This is impossible to achieve using physical medium, such a moment in time is infinitesimally small and therefore impossible to capture. By displaying images at a rapid rate, these discrete moments in time converge and are perceived as a continuous flow of time. \par
+\cf0\par
+\b Experimental Survey\par
+\b0 After studying the Primrose and Bulge illusions [Kitaoka], we hypothesize that use of optical illusion may enable one to convey extra information, information that may remain hidden when using similar graphical techniques that do not utilize optical illusion. In order to test the hypothesis, we designed an experiment to determine the usability of a system that utilizes optical illusions as a means of conveying extra data. The experiment is centered around a three dimensional, geographic map. The map is partitioned along longitudinal and latitudinal lines, creating individual tiles. These tiles are referenced by X and Y coordinate locations on the map. Each tile stores a value that represents the average altitude of the land contained in that tile. The \ldblquote extra data\rdblquote  that the experiment will test is therefore the height of the individual tiles.\par
+The tile map data is rendered in three different manners. \par
+1.) An orthographic projection of the map, utilizing a two-value color coding scheme to indicate areas of \ldblquote land\rdblquote  and \ldblquote water,\rdblquote  is used as a control against providing no height information. In this environment, users must select points at random.\par
+2.) An orthographic projection of the map, utilizing the two-color coding scheme as well as optical illusions to indicate the areas of increasing slope of \ldblquote land,\rdblquote  is the experimental rendering technique. In this environment, users may or may not be able to determine the height of the hills.\par
+3.) An isometric projection, utilizing the two-value color coding scheme as well as perspective to indicate the height of individual tiles, is used as a control against providing explicit height information. In this environment, users can determine the height of hills quite easily.\par
+One of the three rendering techniques is chosen at random for a testing session. A test subject is sequentially presented with a total of fi ve randomly generated maps, each rendered using the rendering technique for the test session. The user is given a task; they must select the tallest hill on the map. This task is reinforced with an animation of a small sheep running to the location that the user selected. After the task is complete for the fi ve maps, session\rquote s rendering technique and the user\rquote s success rate is record.[http://members.gamedev.net/capn_midnight/optical_illusion/survey/]\par
+\par
+\b Results\par
+\b0 The survey was administered through the web site GameDev.net, \ldblquote the leading online community for game developers of all levels.\rdblquote  [http://www.gamedev.net/info/about/] through the interactive forum system [http://www.gamedev.net/community/forums/topic.asp?topic_id=311825]. The survey was advertised by pinning the associated thread to the top of the most active section of the web site, the General Discussion Forum. \par
+A total of 110 test sessions were ran, with a total of 550 tasks completed. The success and failure rates for each rendering method were tabulated and summarized.\par
+\par
+Renderer Total Runs Total Success Total Failure % Success %Failure\par
+1.) 140 7 133 5.000% 95.000%\par
+2.) 220 172 48 78.182% 21.818%\par
+3.) 190 186 4 97.895% 2.105%\par
+\par
+Early in the survey process, a rendering bug was discovered that made selection of the tallest hills nearly impossible when using the experimental map renderer, essentially making it equivalent to fi rst control renderer. The bug was corrected and the survey continued. Because of this, test sessions that resulted in zero or one successes when using the experimental renderer were treated as corrupted data, removed from the data set, and the results were re-tabulated.\par
+\par
+Renderer Total Runs Total Success Total Failure % Success % Failure\par
+1.) 140 7 133 5.000% 95.000%\par
+2.) 195 170 25 87.179% 12.821%\par
+3.) 190 186 4 97.895% 2.105%\par
+\par
+Each of the map renderers were profiled for performance data. A random set of maps of increasing size were rendered a thousand times for each rendering method, and the number of milliseconds that elapsed during the one thousand renderings was recorded along with the size of the map that was rendered. \par
+\par
+Map Size (W x H) Renderer 1 Renderer 2 Renderer 3\par
+3 x 4 266 187 672\par
+6 x 8 297 297 1734\par
+9 x 12 453 468 2437\par
+12 x 16 735 734 4359\par
+15 x 20 1094 1140 6078\par
+18 x 24 1609 1593 9343\par
+21 x 28 2172 2204 13125\par
+24 x 32 2890 2906 16390\par
+27 x 36 3547 3532 21250\par
+30 x 40 4078 4250 22266\par
+Total 17141 17311 97654\par
+\par
+In conclusion we see that real, usable data is transmitted to users via optical illusions at no\par
+extra cost of rendering time.\par
+\par
+//Illusion images courtesy of\par
+Akiyoshi Kitaoka, Department of Psychology, Ritsumeikan University, Kyoto, Japan\par
+http://www.ritsumei.ac.jp/~akitaoka/index-e.html\par
+\par
+//shading demo citations\par
+http://www.elude.ca/sadie/phongpoly.png\par
+http://www.cgl.uwaterloo.ca/~b8chan/cs488/bump.png\par
+Shading gives the illusion of detail that is not present in the rendered geometry\par
+Frames of animation represent discrete moments\par
+in time, giving the illusion of continuous motion.\par
+\cf1\par
+\b 2 References: \b0\par
+[Gouraud 1971] H. Gouraud, "Computer Display of Curved Surfaces," Department of Computer Science, University of Utah, (June 1971). \par
+[Phong 1975] B.T. Phong, \ldblquote Illumination for Computer Generated Pictures,\rdblquote  Communications of the ACM 18, 6, 311\endash  317, (June 1975). \par
+[Blinn 1978] J. F. Blinn, \ldblquote Simulation of wrinkled surfaces,\rdblquote  in SIGGRAPH 78, pp. 286-292, (1978). \par
+[Freeman, Adelson, Heeger 1991] W.T. Freeman, E.H. Adelson, D.J. Heeger, "Motion Without Movement," Computer Graphics, Volume 25, Number 4, (July 1991). \par
+[Kitaoka, Ashida 2003] A. Kitaoka, H. Ashida, "Phenomenal Characteristics of the Peripheral Drift Illusion," VISION Vol. 15, No. 4, pp. 261-262 (2003). \par
+[Fermeuller, Pless, Aloimonos 1996] C. Fermeuller, R. Pless, Y. Aloimonos, "Families of Stationary Patterns Producing Illusory Movement: Insights into the Visual System," Computer Vision Laboratory, University of Maryland, College Park, MD, (October 1996). \par
+[Kitaoka 2002] A. Kitaoka, "Primrose's Field," Trick Eyes, (2002). \par
+[Yu, Choe 2004] Y. Yu, Y. Choe, "Angular Disinhibition Effect in a Modified Poggendorff Illusion," Department of Computer Science, Texas A&M University, (2004). \par
+[Christie 1975] P.S. Christie, "Asymmetry in the Mueller-Lyer illusion: Artifact or genuine effect?" Perception 4:453\endash 457 (1975) \par
+[Eidos 1995] Eidos Interactive, "Thief: the Dark Project," Eidos Interactive, (1995). \cf0\par
+}
+ 

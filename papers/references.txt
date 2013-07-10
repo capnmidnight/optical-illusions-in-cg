@@ -1,0 +1,4 @@
+[Kitaoka] http://www.ritsumei.ac.jp/~akitaoka/index-e.html
+[McBeth:Survey] http://members.gamedev.net/capn_midnight/optical_illusion/survey/
+[Gamedev:About] http://www.gamedev.net/info/about/
+[Gamedev:Survey] http://www.gamedev.net/community/forums/topic.asp?topic_id=311825
